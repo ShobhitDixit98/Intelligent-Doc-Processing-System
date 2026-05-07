@@ -16,7 +16,7 @@ This application leverages state-of-the-art Multimodal AI (Gemini) and specializ
 
 ---
 
-## 📚 Technical Documentation (Interview Ready)
+## 📚 Technical Documentation
 
 Move beyond the basics and understand the engine under the hood:
 - **[Architecture Deep Dive](./ARCHITECTURE.md)**: Explore the data pipeline and system design.

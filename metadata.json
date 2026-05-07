@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Intelligent Document Processing System v.1.0.0",
+  "description": "An intelligent document processing system for financial documents, featuring automated classification, entity extraction, and OCR powered by Gemini.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}

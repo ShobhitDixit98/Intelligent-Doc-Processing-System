@@ -21,9 +21,11 @@ import {
   Camera,
   X,
   Sun,
-  Moon
+  Moon,
+  TrendingUp
 } from 'lucide-react';
 import { processDocument, ExtractedData } from './lib/gemini';
+import BenchmarkDashboard from './components/BenchmarkDashboard';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import confetti from 'canvas-confetti';
@@ -53,6 +55,7 @@ export default function App() {
   });
 
   const [processedFiles, setProcessedFiles] = useState<ProcessedFile[]>([]);
+  const [activeView, setActiveView] = useState<'pipeline' | 'benchmarks'>('pipeline');
   const [isProcessing, setIsProcessing] = useState(false);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
   
@@ -246,6 +249,19 @@ export default function App() {
                 <p className="text-sm font-mono text-[var(--success)]">{completedCount} / {processedFiles.length}</p>
               </div>
             </div>
+            <button 
+              onClick={() => setActiveView(activeView === 'pipeline' ? 'benchmarks' : 'pipeline')}
+              className={cn(
+                "px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border transition-all flex items-center gap-2",
+                activeView === 'benchmarks' 
+                  ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-900/20" 
+                  : "bg-[var(--card)] border-[var(--line)] text-[var(--ink-dim)] hover:text-[var(--ink-bright)]"
+              )}
+            >
+              <TrendingUp size={12} />
+              {activeView === 'pipeline' ? 'Show Analytics' : 'Back to Ledger'}
+            </button>
+
             <div className="h-8 w-[1px] bg-[var(--line)]" />
             
             <button 
@@ -361,8 +377,18 @@ export default function App() {
           {/* Right Column: Interaction Layer */}
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
-              {isCameraOpen ? (
+              {activeView === 'benchmarks' ? (
+                <motion.div
+                  key="benchmarks"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                >
+                  <BenchmarkDashboard />
+                </motion.div>
+              ) : isCameraOpen ? (
                 <motion.div 
+                  key="camera"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}

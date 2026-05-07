@@ -1,41 +1,52 @@
-# Financial AI: Intelligent Document Processing (IDP)
+# 🧾 Financial AI: Intelligent Document Processing (IDP)
 
-This app helps you organize your money by automatically reading your receipts and invoices. No more manual typing!
+**Transform your financial chaos into structured data.** 
+This application leverages state-of-the-art Multimodal AI (Gemini) and specialized Vision models (Hugging Face) to automate the extraction of data from receipts, invoices, and bills.
+
+---
 
 ## 🚀 Demo: How to use it
 
 1.  **Add your documents**: 
-    *   **Drag and Drop**: Drag your receipt images (JPG, PNG) or PDFs directly onto the app.
-    *   **Scan with Camera**: Click the **Camera icon** to take a live photo of a physical receipt.
-2.  **Start Processing**: Click the **"Process All"** button. The AI will start reading each document.
-3.  **Review the Data**: Once finished, you will see a list of extracted details like the store name, date, and total amount.
-4.  **Save your Work**: Click **"Export CSV"** to download all the information into a spreadsheet file.
+    *   **Drag and Drop**: Drag receipt images (JPG, PNG) or PDFs onto the app.
+    *   **Scan with Camera**: Click the **Camera icon** to take a live photo.
+2.  **Start Processing**: Click **"Process All"**. The AI extracts vendor names, dates, amounts, taxes, and categories.
+3.  **Review the Data**: View the extracted details in a clean, theme-aware data grid.
+4.  **Save your Work**: Click **"Export CSV"** to download your data for Excel/Sheets.
 
-## ✨ Main Features
+---
 
-*   **Smart Reading**: Powered by Google's Gemini AI to understand exactly what's on your paper.
-*   **Automatic Categorization**: It automatically knows if a receipt is for a Restaurant, Taxi, Grocery, or Shopping.
-*   **Camera Integration**: Take photos of receipts while you are out and about.
-*   **Dark Mode**: Easy on the eyes with a beautiful dark interface (or switch to light if you prefer!).
-*   **Secure**: Your documents are processed and the data stays with you.
+## 📚 Technical Documentation (Interview Ready)
+
+Move beyond the basics and understand the engine under the hood:
+- **[Architecture Deep Dive](./ARCHITECTURE.md)**: Explore the data pipeline and system design.
+- **[Interview Preparation Guide](./INTERVIEW_PREP.md)**: Prepare for technical Q&A about OCR, LLMs, and IDP.
+- **[Hugging Face Integration Guide](./HUGGINGFACE_GUIDE.md)**: Roadmap for increasing accuracy with specialized models.
+
+---
+
+## ✨ Strategic Highlights
+
+*   **Hybrid AI Strategy**: Uses **Gemini 3 Flash** for speed and logical reasoning, with a roadmap for **Hugging Face (LayoutLM)** verification.
+*   **Multimodal OCR**: No more "OCR-then-LLM" steps. The vision model reads the page directly, preserving spatial context.
+*   **Privacy-First**: No backend storage. All processing happens in-memory and via secure inference endpoints.
+*   **Zero-Maintenance Architecture**: 100% serverless client-side React app.
+
+---
 
 ## 🛠️ Built With
 
-*   **React**: For a smooth and fast user interface.
-*   **Gemini AI**: The "brain" that reads the documents.
-*   **Tailwind CSS**: For a clean and modern design.
-*   **Lucide Icons**: For beautiful, easy-to-understand icons.
+- **AI**: Gemini API (`gemini-3-flash-preview`)
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS 4.0
+- **Animations**: Framer Motion (`motion/react`)
+- **Icons**: Lucide React
 
-## 💻 Tech Setup (For Developers)
+---
 
-To run this project locally:
+## 📲 Local Setup
 
-1.  **Install dependencies**:
-    ```bash
-    npm install
-    ```
-2.  **Set up your keys**: Add your `GEMINI_API_KEY` to a `.env` file.
-3.  **Start the app**:
-    ```bash
-    npm run dev
-    ```
+1.  **Clone & Install**: `npm install`
+2.  **Environment**: Add `GEMINI_API_KEY` to your secrets/env.
+3.  **Run**: `npm run dev`
+

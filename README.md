@@ -20,7 +20,7 @@ This application leverages state-of-the-art Multimodal AI (Gemini) and specializ
 
 Move beyond the basics and understand the engine under the hood:
 - **[Architecture Deep Dive](./ARCHITECTURE.md)**: Explore the data pipeline and system design.
-- **[Interview Preparation Guide](./INTERVIEW_PREP.md)**: Prepare for technical Q&A about OCR, LLMs, and IDP.
+- **[QA Guide](./INTERVIEW_PREP.md)**: Prepare for technical Q&A about OCR, LLMs, and IDP.
 - **[Hugging Face Integration Guide](./HUGGINGFACE_GUIDE.md)**: Roadmap for increasing accuracy with specialized models.
 
 ---

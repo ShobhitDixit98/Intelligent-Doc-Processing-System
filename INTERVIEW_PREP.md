@@ -1,4 +1,4 @@
-# Interview Preparation: Intelligent Document Processing (IDP)
+# Intelligent Document Processing (IDP) QA
 
 This guide prepare you to explain the technical complexity and design decisions of this project during interviews.
 
